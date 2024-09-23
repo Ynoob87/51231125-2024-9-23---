@@ -1,23 +1,30 @@
+"use client";
+
 import React from "react";
-
-const links = [
-  { href: "#", label: "首頁" },
-  { href: "#", label: "關於我們" },
-  { href: "#", label: "服務" },
-  { href: "#", label: "聯絡我們" },
-];
-
-const linkClassName =
-  "my-[0px] mx-[15px] decoration-transparent text-black hover:text-pink-300";
+import { links } from "../constants";
 
 const NavBar = () => {
   return (
-    <nav className="text-pink-300 mt-[10px] mb-[0px] text-center flex justify-center">
-      {links.map((link, index) => (
-        <a key={index} href={link.href} className={linkClassName}>
-          {link.label}
-        </a>
-      ))}
+    <nav className="bg-white shadow-custom1 w-full z-10">
+      <div className="container mx-auto flex justify-between items-center p-4">
+        <div className="text-main font-bold text-xl">範例網站</div>
+        <div className="hidden md:flex space-x-6">
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="text-main hover:text-primary-pink transition duration-300 ease-in-out py-2"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <div className="md:hidden">
+          <button className="text-main hover:text-primary-pink">
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </nav>
   );
 };
