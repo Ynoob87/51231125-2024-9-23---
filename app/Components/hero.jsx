@@ -1,11 +1,14 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 
 const Hero = () => {
   return (
-    <section className="p-[20px] bg-white m-[20px] shadow-lg">
-      <h1 className="text-4xl">範例內容</h1>
-      <p>這裡是來展示基本HTML CSS的範例</p>
-    </section>
+    <Box p={5} bgcolor="white" m={5} boxShadow={3}>
+      <Typography variant="h1" component="h1">
+        範例內容
+      </Typography>
+      <Typography variant="body1">這裡是來展示基本HTML CSS的範例</Typography>
+    </Box>
   );
 };
 

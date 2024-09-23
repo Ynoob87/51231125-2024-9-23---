@@ -1,32 +1,23 @@
 import React from "react";
 
+const links = [
+  { href: "#", label: "首頁" },
+  { href: "#", label: "關於我們" },
+  { href: "#", label: "服務" },
+  { href: "#", label: "聯絡我們" },
+];
+
+const linkClassName =
+  "my-[0px] mx-[15px] decoration-transparent text-black hover:text-pink-300";
+
 const NavBar = () => {
   return (
-    <nav className="text-green-500 mt-[10px] mb-[0px] text-center flex justify-center">
-      <a
-        href="#"
-        className="my-[0px] mx-[15px] decoration-transparent text-black hover:text-green-400"
-      >
-        首頁
-      </a>
-      <a
-        href="#"
-        className="my-[0px] mx-[15px] decoration-transparent text-black hover:text-green-400"
-      >
-        關於我們
-      </a>
-      <a
-        href="#"
-        className="my-[0px] mx-[15px] decoration-transparent text-black hover:text-green-400"
-      >
-        服務
-      </a>
-      <a
-        href="#"
-        className="my-[0px] mx-[15px] decoration-transparent text-black hover:text-green-400"
-      >
-        聯絡我們
-      </a>
+    <nav className="text-pink-300 mt-[10px] mb-[0px] text-center flex justify-center">
+      {links.map((link, index) => (
+        <a key={index} href={link.href} className={linkClassName}>
+          {link.label}
+        </a>
+      ))}
     </nav>
   );
 };
